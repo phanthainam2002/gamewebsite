@@ -11,26 +11,28 @@
     <h1 class = "jumbotron display-3 d-none d-md-block text-danger m*-2 font-weight-bold"> __ CLoWN GamE __ </h1>
   </head>
   <body>
-    <div class="container">
+    <div id="bg1" class="container">
       <div class="row">
         {% for gamelist in gamelist %}
 
         <div class="col-md-4 col-sm-6 m*-5">
-          <div class="card border-info mb-3">
+          <div class="card border-dark border-info mb-3">
             <img src="{{ gamelist["image"] }}" class="mb-5 img-fluid imgsize card-img-top" alt="">
-          </div>
+
           <div class="card-body">
             <h3 class = "text-secondary card-title" > {{ gamelist["name"] }} </h3>
-            <h4 class="text-danger">Desciption</h4>
-            <h6>{{ gamelist["desciption"] }}</h6>
+            <h4 class="text-danger">Description</h4>
+            <h6>{{ gamelist["description"] }}</h6>
           <div class="card-footer">
             <div class="clearfix">
-                <a class="text-danger float-right" href=""> Download Game </a>
+              <a href="/game_info/{{ gamelist.id }}" class="text-danger font-italic float-right">Click Here For Info</a>
+                <a class=""href="#"></a>
             </div>
 
           </div>
           </div>
 
+          </div>
         </div>
         {% endfor %}
       </div>

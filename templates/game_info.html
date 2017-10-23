@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>=={{ gamelist.name }}==</title>
+  </head>
+  <body>
+    <div class="container  mt-5">
+      <div class="row">
+        <div class="col-md-4 ">
+          <img class="img-fluid mb-1 card-img-top" src="{{ gamelist.image }}" alt="">
+          <div class="card border-secondary m*-3">
+              <h3 class="text-dark">Name: </h3>
+              <h5 class="text-secondary ml-2" >{{ gamelist.name }}</h5>
+          </div>
+        </div>
+        <div class="col-md-8 ">
+          <div class="card border-secondary card-body m*-3">
+            <h3 class="font-weight-bold text-danger">Description: </h3>
+            <p>{{ gamelist.description}}</p>
+          </div>
+          <div class="card-footer border-secondary">
+            <div class="clearfix">
+              <button  class="btn  btn-primary float-right" type="button" name="button">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+{% endblock %}

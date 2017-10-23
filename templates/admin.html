@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1 id="jbt" class="jumbotron display-3 d-none d-md-block text-warning font-italic font-weight-bold text-center">___PAGE MANAGING____</h1>
+<div class="container">
+  <table class= "table table-bordered">
+    <thead>
+      <tr class="table-warning adminv row">
+        <th class="col-md-2 text-dark font-italic"># No.</th>
+        <th class="col-md-3 text-danger">Name</th>
+        <th class="col-md-6 text-center text-info">description</th>
+        <th class="col-md-1 text-center">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for gamelist in gamelist %}
+      <tr class="table-light row">
+        <td class="col-md-2 text-dark font-weight-bold font-italic"> {{loop.index}} </td>
+        <td class="col-md-3 text-danger">
+            <a href="#">{{gamelist["name"]}}</a>
+        </td>
+        <td class="col-md-6 text-dark"> {{gamelist["description"]}} </td>
+        <td class="text_center col-md-1">
+          <a  href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+          <a href="/delete_game/{{ gamelist.id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        </td>
+        {% endfor %}
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+{% endblock %}
